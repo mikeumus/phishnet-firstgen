@@ -15,6 +15,14 @@ from scrapy.exceptions import DropItem
 
 # http://stackoverflow.com/a/22263951/1762493
 class MyImagesPipeline(ImagesPipeline):
+    
+    def process_item(self, item, spider): 
+        if spider.name not in ['offline_phishies']: 
+            item.save()
+            return item  
+        # elif spider.name == ['cloned_phishies']:
+        #     item.save()
+        #     return item
 
     #Name download version
     def file_path(self, request, response=None, info=None):

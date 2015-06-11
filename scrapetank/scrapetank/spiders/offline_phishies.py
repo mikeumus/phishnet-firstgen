@@ -20,11 +20,6 @@ class MySpider(scrapy.Spider):
         # http://doc.scrapy.org/en/latest/topics/spiders.html#spider-arguments
         self.start_urls = ['https://www.phishtank.com/target_search.php?page=%s&target_id={0}&active=n&valid=y&Search=Search'.format(target_id) % page for page in xrange(1,300)]
  
-    """ Spider Legend
-    Nice, thanks ArseniyK! :)
-    Moved it to Spider-Arguments-Key.md
-    """
-    
     # http://doc.scrapy.org/en/latest/topics/spiders.html#crawlspider-example
     rules = (
         Rule(LinkExtractor(restrict_xpaths=('/a[text() = "Older >"]')), callback='parse_item', follow=True )
@@ -63,10 +58,11 @@ class MySpider(scrapy.Spider):
         # //div[starts-with(@id, "site_comment_"]), i.e. all divs that have an "id" attribute beginning with string ""site_comment_"
         phishs = sel.xpath('//td[@class="value"]/a[starts-with(@href, "phish_detail.php?phish_id=")]')
         items = []
+        item = PhishIdItem()
+        item['company'] = sel.xpath('//select[@name="target_id"]/option[@selected]/text()').extract()[0]
         
         for phish in phishs:
-            item = PhishIdItem()
-            item['phishyid'] = phish.xpath('text()').extract()
+            item['phishyid'] = str(phish.xpath('text()').extract()[0])
             img_id = item['phishyid']
             item['image_urls'] = ["http://phishtank-screenshots.e1.usw1.opendns.com.s3-website-us-west-1.amazonaws.com/{}.jpg".format(img_id) for img_id in item['phishyid']] 
             items.append(item)

@@ -8,3 +8,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 )
+
+## http://stackoverflow.com/a/24983231/1762493
+admin.site.site_header = 'PhishNet Admin'

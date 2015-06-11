@@ -1,0 +1,58 @@
+[
+  {
+    "model": "pishing.fixedphish",
+    "pk": 1,
+    "fields": {
+      "phishyid": "3089620",
+      "company": "Wells Fargo"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 2,
+    "fields": {
+      "phishyid": "3089619",
+      "company": "Wells Fargo"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 3,
+    "fields": {
+      "phishyid": "3087725",
+      "company": "Wells Fargo"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 4,
+    "fields": {
+      "phishyid": "3086449",
+      "company": "PayPal"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 5,
+    "fields": {
+      "phishyid": "3084257",
+      "company": "PayPal"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 6,
+    "fields": {
+      "phishyid": "3078129",
+      "company": "PayPal"
+    }
+  },
+  {
+    "model": "pishing.fixedphish",
+    "pk": 7,
+    "fields": {
+      "phishyid": "3076509",
+      "company": "PayPal"
+    }
+  }
+]

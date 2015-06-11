@@ -8,19 +8,26 @@ from scrapy.contrib.djangoitem import DjangoItem
 #from scrapy_phishtank.models import Phish
 # Add the django app to settings and import the model here :)
 from pishing.models import Phish
+from pishing.models import ClonedPhish
 import scrapy
 
-""" old scrapy item (still works! just trying to use djangoitem now)
-class PhishID(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    phishyid = scrapy.Field()
-    image_urls = scrapy.Field()
-    images = scrapy.Field()
-    # pass
-"""    
+# old scrapy item (still works! just trying to use djangoitem now)
+# class PhishIdItem(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     phishyid = scrapy.Field()
+#     image_urls = scrapy.Field()
+#     images = scrapy.Field()
+#     # pass
+   
 class PhishIdItem(DjangoItem):
     django_model = Phish
     image_urls = scrapy.Field()
     images = scrapy.Field()
     image_paths = scrapy.Field()
+
+class ClonedPhishItem(DjangoItem):
+    django_model = ClonedPhish
+    # cloned_image_urls = scrapy.Field()
+    # cloned_images = scrapy.Field()
+    # cloned_image_paths = scrapy.Field()
