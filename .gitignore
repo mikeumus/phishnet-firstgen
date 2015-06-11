@@ -49,6 +49,9 @@ coverage.xml
 *.mo
 *.pot
 
+# Scrapy stuff:
+scrapetank/phishshots/*
+
 # Django stuff:
 scrapy_phishtank/*.log
 scrapy_phishtank/scrapy_phishtank/settings_secret.py
