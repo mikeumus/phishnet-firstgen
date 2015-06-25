@@ -3,6 +3,7 @@
 # https://docs.djangoproject.com/en/1.8/ref/models/fields/
 from django.db import models
 from django.utils import timezone
+from django.db.models.signals import post_save, post_delete
 
 class Phish(models.Model):
     phishyid = models.CharField(max_length=255, unique=True)
@@ -28,6 +29,6 @@ class ClonedPhish(models.Model):
     cloned_phishdate = models.CharField(max_length=255)
     cloned_timestamp = models.DateField(default=timezone.now)
     # image_urls = models.URLField(max_length=255, unique=True)
-    
+
     def __str__(self):
         return unicode(self.cloned_phishyid)

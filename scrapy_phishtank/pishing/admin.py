@@ -20,3 +20,12 @@ class ClonedPhishAdmin(admin.ModelAdmin):
 admin.site.register(Phish, PhishAdmin)
 admin.site.register(FixedPhish, FixedPhishAdmin)
 admin.site.register(ClonedPhish, ClonedPhishAdmin)
+
+
+""" Notes
+
+Customizing Admin CSS / JS
+- https://docs.djangoproject.com/en/1.8/ref/contrib/admin/#modeladmin-asset-definitions
+- https://docs.djangoproject.com/en/1.8/ref/contrib/admin/#overriding-admin-templates
+
+"""

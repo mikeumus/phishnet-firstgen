@@ -56,6 +56,12 @@ scrapetank/phishshots/*
 scrapy_phishtank/*.log
 scrapy_phishtank/scrapy_phishtank/settings_secret.py
 
+# Celery stuff:
+scrapy_phishtank/celeryev.pid
+scrapy_phishtank/test.db
+*.log
+*.pid
+
 # Sphinx documentation
 scrapy_phishtank/docs/_build/
 
