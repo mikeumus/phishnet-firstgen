@@ -8,11 +8,11 @@ CELERY_INCLUDE = 'processes.tasks'
 CELERY_DISABLE_RATE_LIMITS = True # http://docs.celeryproject.org/en/master/userguide/tasks.html#disable-rate-limits-if-they-re-not-used
 
 
-BROKER_HOST = "localhost"
+BROKER_URL = "localhost"
 BROKER_BACKEND = "redis"
 BROKER_USER = ""
 BROKER_PASSWORD = ""
-BROKER_VHOST = "0"
+# BROKER_VHOST = "0"
 
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
