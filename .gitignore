@@ -55,6 +55,8 @@ scrapetank/phishshots/*
 # Django stuff:
 scrapy_phishtank/*.log
 scrapy_phishtank/scrapy_phishtank/settings_secret.py
+dump.rdb
+scrapy_phishtank/dump.rdb
 
 # Celery stuff:
 scrapy_phishtank/celeryev.pid
