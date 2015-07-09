@@ -101,5 +101,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+# http://stackoverflow.com/questions/12809416/django-static-files-404
+
+STATIC_ROOT = ''
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    '/home/pixm/PhishNet-Dev/workspace/static/',
+)
 
 STATIC_URL = '/static/'

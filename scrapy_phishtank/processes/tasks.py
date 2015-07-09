@@ -1,3 +1,5 @@
+""" USING /pishing/tasks/py
+
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 
@@ -19,11 +21,11 @@ url = 'http://data.phishtank.com/data/online-valid.json'
 #@shared_task(name="shared_tasks.add")
 #def add(x, y):
 #    return x + y
-"""
+
 @shared_task(name="shared_tasks.getPhishtankJson")
 def getPhishtankJson():
     # url = 'http://data.phishtank.com/data/{}/online-valid.json.bz2'.format(PHISHTANK_API_KEY)
-    # https://googledrive.com/host/0B9LVk4xbDIJTY0Z6dVVjUTAwYnM
+    # https://googledrive.com/host/0B9LVk4xbDIJTY0Z6dVVjUTAwYnM # Google Drive hosted valid_online.json (except it's not encoded in json any longer on Google Drive for some reason)
     #r = requests.get('https://googledrive.com/host/0B9LVk4xbDIJTY0Z6dVVjUTAwYnM', stream=True)
     # data = r.json()
     # note to self, try stream io.open
@@ -35,12 +37,12 @@ def getPhishtankJson():
     # http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-yp
     #local_filename = 'valid_online.json'
     #with open(local_filename, 'wb') as f:
-    #    for chunk in r.iter_content(chunk_size=1024): 
+    #    for chunk in r.iter_content(chunk_size=1024):
     #        if chunk: # filter out keep-alive new chunks
     #            f.write(chunk)
     #            f.flush()
     #return local_filename
-    
+
     r = requests.get(url)
     r.encoding = 'utf-8'
     threats = json.loads(r.text)
