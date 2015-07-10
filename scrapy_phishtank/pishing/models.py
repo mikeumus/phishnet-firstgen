@@ -25,14 +25,12 @@ class FreshPhish(models.Model):
     fresh_target = models.CharField(max_length=255)
     live_phish = models.BooleanField(default=False)
     verification_time = models.DateTimeField(null=True, blank=True)
-    detail_time = models.DateTimeField(
-        null=True, blank=True)  # details.detail_time
-    country = models.CharField(max_length=255)  # details.country
-    announcing_network = models.CharField(
-        max_length=255)  # details.announcing_network
+    detail_time = models.DateTimeField(null=True, blank=True)  # details.detail_time
+    country = models.CharField(max_length=255, blank=True, null=True)  # details.country
+    announcing_network = models.CharField(max_length=255, blank=True, null=True)  # details.announcing_network
     # details.ip_address. Swith to use "GenericIPAddressField" later
-    fresh_ip = models.CharField(max_length=255)
-    cidr_block = models.CharField(max_length=255)  # details.cidr_block
+    fresh_ip = models.CharField(max_length=255, blank=True, null=True)
+    cidr_block = models.CharField(max_length=255, blank=True, null=True)  # details.cidr_block
     phishtank_url = models.CharField(max_length=255)  # phish_detail_url
     submission_time = models.DateTimeField(null=True, blank=True)
     # WHOIS, afterwards from scraping

@@ -74,14 +74,16 @@ WSGI_APPLICATION = 'scrapy_phishtank.wsgi.application'
 DATABASES = {
     'default': {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'database.db',  # path to database file if using sqlite3.
-        'USER': '',        # Not used with sqlite3.
-        'PASSWORD': '',    # Not used with sqlite3.
-        'HOST': '',        # Set to empty string for localhost.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'phishingdb',  # path to database file if using sqlite3.
+        'USER': 'pixm',        # Not used with sqlite3.
+        'PASSWORD': POSTGRES_SECRET,    # Not used with sqlite3.
+        'HOST': '127.0.0.1',        # Set to empty string for localhost.
                            # Not used with sqlite3.
-        'PORT': '',        # Set to empty string for default.
+        'PORT': '5432',        # Set to empty string for default.
                            # Not used with sqlite3.
+        'CONN_MAX_AGE': 600,
+                           
     }
 }
 
