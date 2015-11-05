@@ -54,7 +54,7 @@ def StorePhishURL():
                 # :p
 
                 #driver_arguments['chrome_options'].add_argument('--no-sandbox')
-                deriver.set_page_load_timeout(30)
+                driver.set_page_load_timeout(30)
                 driver.get(threat['url'])
                 # save "phishshots" (screenshots) in folder http://stackoverflow.com/questions/27874002/python-selenium-save-screenshot-in-newly-created-folder
                 driver.save_screenshot('phishots/{0}_{1}_screenshot.png'.format(threat['target'], threat['phish_id']))
